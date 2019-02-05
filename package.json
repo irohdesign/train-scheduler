@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/irohdesign/train-scheduler/issues"
   },
-  "homepage": "https://github.com/irohdesign/train-scheduler#readme"
+  "homepage": "https://github.com/irohdesign/train-scheduler#readme",
+  "dependencies": {
+    "firebase-admin": "^7.0.0"
+  }
 }

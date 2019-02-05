@@ -1,0 +1,33 @@
+#heading {
+    width: 100%;
+    text-align: center;
+    display: table;
+    height: 200px;
+    background: #888;
+}
+
+#current {
+    margin: 50px auto;
+}
+
+#heading h1 {
+    display: table-cell;
+    vertical-align: middle;
+    color: white;
+    font-size: 70px;
+}
+
+input {
+    display: block;
+    width: 100%;
+}
+
+#add-form {
+    padding: 20px;
+    border: solid 1px #888;
+}
+
+#add-form button {
+    background: #888;
+    color: white;
+}
