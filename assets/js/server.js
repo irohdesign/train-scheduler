@@ -62,12 +62,12 @@ $("#submit").on("click", function(snapshot) {
 
 ref.on("value", function(snapshot) {
     var trains = snapshot.val();
-    console.log(trains);
 
-    $.each(trains, function (index, value) {
-        var newRow = $("<tr>");
-        newRow.html(`<td>${frequency}</td><td>${destination}</td><td>${frequency}</td><td>${nextArrival}</td><td>${minutesAway}</td>`);
-    
-        $(".trains").append(newRow);
-    })
+    // $.each(trains, function (index, value) {
+    //     console.log(index + ":" + $(this).val(value));
+    // })
+
+    for (var key in trains) {
+        console.log(trains[key].frequency);
+    }
 });
