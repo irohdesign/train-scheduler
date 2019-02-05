@@ -13,6 +13,7 @@ messagingSenderId: "854438419641"
 firebase.initializeApp(config);
 
 var database = firebase.database();
+var ref = firebase.database().ref();
 
 
 // test data for table format
@@ -25,7 +26,7 @@ var database = firebase.database();
 
 
 // add trains button
-$("#submit").on("click", function() {
+$("#submit").on("click", function(snapshot) {
     event.preventDefault();
 
     var newTrain = $("#train-name").val();
@@ -54,15 +55,19 @@ $("#submit").on("click", function() {
     $("#frequency").val("");
 
     // print out train schedule
+    // console.log(snapshot.val());
+    
+
 })
 
+ref.on("value", function(snapshot) {
+    var trains = snapshot.val();
+    console.log(trains);
 
-
-
-// $.each(trains, function (index, value) {
-//     var newRow = $("<tr>");
-//     newRow.html(`<td>${newTrain}</td><td>${destination}</td><td>${frequency}</td><td>${nextArrival}</td><td>${minutesAway}</td>`);
-
-//     $(".trains").append(newRow);
-// })
-
+    $.each(trains, function (index, value) {
+        var newRow = $("<tr>");
+        newRow.html(`<td>${frequency}</td><td>${destination}</td><td>${frequency}</td><td>${nextArrival}</td><td>${minutesAway}</td>`);
+    
+        $(".trains").append(newRow);
+    })
+});
